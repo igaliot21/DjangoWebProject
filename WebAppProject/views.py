@@ -2,25 +2,27 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.template import Template
+import datetime
 
 # Create your views here.
 
 
 def home(request):
-    return HttpResponse("Home")
+    return render(request, "Home.html")
 
 
 def servicios(request):
-    return HttpResponse("Servicios")
+    return render(request, "Servicios.html")
 
 
 def tienda(request):
-    return HttpResponse("Tienda")
+    return render(request, "Tienda.html")
 
 
 def blog(request):
-    return HttpResponse("Blog")
+    return render(request, "Blog.html")
 
 
 def contacto(request):
-    return HttpResponse("Contacto")
+    return render(request, "Contacto.html")
