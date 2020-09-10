@@ -8,7 +8,8 @@ class servicio(models.Model):
         max_length=50, verbose_name="Título del servicio")
     contenido = models.CharField(
         max_length=512, verbose_name="Contenido del servicio")
-    imagen = models.ImageField(verbose_name="Imagen del servicio")
+    imagen = models.ImageField(
+        verbose_name="Imagen del servicio", upload_to='servicios/img')
     created = models.DateField(
         auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateField(
