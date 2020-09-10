@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template import Template
+from WebAppServicios.models import servicio
 import datetime
 
 # Create your views here.
@@ -13,7 +14,8 @@ def home(request):
 
 
 def servicios(request):
-    return render(request, "Servicios.html")
+    servicios = servicio.objects.all()
+    return render(request, "Servicios.html", {"servicios": servicios})
 
 
 def tienda(request):
