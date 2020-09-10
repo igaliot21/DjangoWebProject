@@ -16,3 +16,5 @@ WebProject/__pycache__/settings.cpython-38.pyc
 media/servicios/img/aeG5215_700b_v1.jpg
 media/servicios/img/potentiometer.jpg
 media/servicios/img/rj45plan.png
+WebAppServicios/__pycache__/urls.cpython-38.pyc
+WebAppServicios/__pycache__/views.cpython-38.pyc
