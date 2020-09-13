@@ -12,13 +12,35 @@
       />
       <div class="intro-text left-0 text-center bg-faded p-5 rounded">
         <h2 class="section-heading mb-4">
-          <span class="section-heading-lower">{{post.titulo}}</span>
+          <span class="section-blog-title">{{post.titulo}}</span>
+          <span class="section-blog-cat">
+            {%for categoria in post.categorias.all%}
+              {{categoria.nombre}}
+            {% endfor %} 
+          </span>
+          <span class="section-blog-data">{{post.updated}}</span>          
           <br />
-          <span class="section-heading-upper">{{post.contenido}}</span>
+          <span class="section-blog-content">{{post.contenido}}</span>
+          <span class="section-blog-author">Autor: {{post.autor}}</span>
         </h2>
       </div>
     </div>
   </div>
 </section>
 
-{% endfor %} {% endblock %}
+{% endfor %} 
+
+<section>
+  <div class="section-categories">
+    <p>
+      Categorias:&nbsp;&nbsp;&nbsp;
+      {%for post in posts%}
+        {%for categoria in post.categorias.all%}
+          {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
+        {% endfor %} 
+      {% endfor %} 
+    </p>
+  </div>
+</section>
+
+{% endblock %}
